@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+      <a routerLink="home" class="navbar-brand nav-link active" aria-current="page" href="home">
+        <img src={{lvlogo}} alt="Logo" width="30" height="24" class="d-inline-block align-text-top rounded">
+        Lucca Vittorio
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link active dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Galeria
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Todas as Obras</a></li>
+              <li><a class="dropdown-item" href="#">Pinturas</a></li>
+              <li><a class="dropdown-item" href="#">Fotografias</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a routerLink="galeria" class="nav-link active" aria-current="page">Galeria</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="sobre" class="nav-link active" aria-current="page">Sobre</a>
+          </li>
+          <li class="nav-item">
+            <a routerLink="contato/index" class="nav-link active" aria-current="page">Contatos</a>
+          </li>
+        </ul>
+        <form>
+          <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+        </form>
+      </div>
+    </div>
+  </nav>
+  
