@@ -8,7 +8,7 @@ const cors = require("cors");
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 app.use(cors());
-
+//comentarios de testes
 app.get("/", function(req, res){
     Contatos.findAll()
     .then(data => {
