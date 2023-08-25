@@ -19,13 +19,10 @@ export class IndexComponent {
     this.apiContatoService.listar().subscribe(
       (lista) => {this.contatos = lista}
     )
-    //teste
+
   }
 
-  listar2() {
-    this.apiContatoService.listar().subscribe(
-      (lista) => {this.contatos = lista}
-    )
-    //teste
+  excluir(id : Number) {
+    this.apiContatoService.excluir(id).subscribe(() => {this.listar()});
   }
-}
+  }

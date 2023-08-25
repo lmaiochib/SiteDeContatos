@@ -1,1 +1,43 @@
 <!-- BOTAO CADASTRAR TELA DE LOGIN -->
+<div class="row d-flex justify-content-center">
+    <form [formGroup]="form" (ngSubmit)="salvar()" class="col-md-6">
+        <h1>Novo contato</h1>
+
+        <label>Nome:
+            <span *ngIf="f['nome'].touched && f['nome'].errors">
+                <div class="text-danger" *ngIf="f['nome'].errors && f['nome'].errors['required']">
+                    Nome obrigatório
+                </div>
+
+                <div class="text-danger" *ngIf="f['nome'].errors && f['nome'].errors['minLength']">
+                    Minímo permitido 2 caracteres
+                </div>
+
+                <div class="text-danger" *ngIf="f['nome'].errors && f['nome'].errors['maxLength']">
+                   Máximo permitido 60 caracteres
+                </div>
+            </span>
+        </label>
+
+        <input type="text" formControlName="nome" class="form-control my-2" placeholder="Nome" [ngClass]="{ 'is-invalid' : f['nome'].touched && f['nome'].errors}">
+
+        <label>E-mail:
+            <span *ngIf="f['email'].touched && f['email'].errors">
+                <div class="text-danger" *ngIf="f['email'].errors && f['email'].errors['required']">
+                    E-mail obrigatório
+                </div>
+
+                <div class="text-danger" *ngIf="f['email'].errors && f['email'].errors['email']">
+                    E-mail inválido
+                </div>
+            </span>
+        </label>
+        
+        <input type="text" formControlName="email" class="form-control my-2" placeholder="E-mail" [ngClass]="{ 'is-invalid' : f['nome'].touched && f['nome'].errors}">
+
+        <div class="text-center mt-3">
+            <input type="submit" class="btn btn-success m-1" [disabled]="!form.valid || submetido">
+            <input type="button" value="Voltar" class="btn btn-danger" routerLink='/contato/index'>
+        </div>
+    </form>
+</div>
